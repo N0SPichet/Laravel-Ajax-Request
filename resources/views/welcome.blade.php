@@ -26,6 +26,7 @@
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>
+		
 		<div class="col-md-6">
 			<h3>Sign In</h3>
 			<form id="signinForm" action="{{ route('login') }}" method="POST">
