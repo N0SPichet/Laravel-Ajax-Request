@@ -1,0 +1,72 @@
+p, span, em, b {
+    margin: 10px 0 10px;
+}
+
+hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #ff8888;
+}
+.error, .success {
+	border-radius: 4px;
+	list-style: none;
+	padding-left: 10px;
+}
+
+.error ul {
+	border: 1px solid #ff8888;
+}
+
+.error ul li {
+    margin: 10px 0 10px;
+}
+
+.error {
+	color: red;
+}
+
+.success {
+	border: 1px solid #5cff5c;
+	color: green;
+}
+
+/*dashboard*/
+
+.dashboard-container {
+	padding: 16px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.dashboard-container header {
+	margin-bottom: 20px;
+}
+
+.dashboard-container .post {
+	border-left: 2px solid #3bb724;
+	padding-left: 10px;
+}
+
+.dashboard-container .info {
+	color: #aaa;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+
+/*button*/
+
+.btn.like {
+	background: linear-gradient(#ff5555, #f00);
+    color: #fff;
+}
+
+.btn.edit {
+	background: linear-gradient(#ff8c55, #ff5e00);
+    color: #fff;
+}
+
+.btn.delete {
+	background: linear-gradient(#fff, #fff);
+    color: #000;
+}
