@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-	<div class="row">
+	<div class="row title-container">
 		<h3>Dashboard</h3>
 		@if (Auth::check())
 		<h4>Login as {{ Auth::user()->email }}</h4>

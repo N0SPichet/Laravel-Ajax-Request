@@ -13,10 +13,10 @@
 
 Route::get('/', 'PageController@index')->name('home');
 Route::get('/home', 'PageController@index');
-Route::post('login', 'UserController@userSignIn')->name('login');
 
 Route::middleware(['guest'])->group(function() {
 	Route::post('signup', 'UserController@userSignUp')->name('user.signup');
+	Route::post('login', 'UserController@userSignIn')->name('login');
 });
 
 Route::middleware(['auth'])->group(function () {

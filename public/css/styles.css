@@ -8,6 +8,7 @@ hr {
 	border: 0;
 	border-top: 1px solid #ff8888;
 }
+
 .error, .success {
 	border-radius: 4px;
 	list-style: none;
@@ -29,6 +30,10 @@ hr {
 .success {
 	border: 1px solid #5cff5c;
 	color: green;
+}
+
+.title-container {
+    margin: 0 0;
 }
 
 /*dashboard*/
