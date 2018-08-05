@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
+use App\Like;
 
 class PostController extends Controller
 {
@@ -105,5 +106,29 @@ class PostController extends Controller
             return redirect()->route('posts.index')->with('message', 'Post successfully deleted!');
         }
         return redirect()->back();
+    }
+
+    public function postLike(Request $request)
+    {
+        $post_id = $request->id;
+        $post = Post::find($post_id);
+        if (!$post) {
+            return null;
+        }
+        $user = Auth::user();
+        $like = $user->likes()->where('post_id', $post_id)->first();        
+        if ($like) {
+            if ($like->like == true) {
+                $like->delete();
+                return response()->json(['msg' => 'unliked'], 200);
+            }
+        } else {
+            $like = new Like;
+            $like->like = true;
+            $like->user_id = $user->id;
+            $like->post_id = $post->id;
+            $like->save();
+            return response()->json(['msg' => 'liked'], 200);
+        }
     }
 }

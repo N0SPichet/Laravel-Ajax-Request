@@ -61,17 +61,26 @@ hr {
 
 /*button*/
 
-.btn.like {
-	background: linear-gradient(#ff5555, #f00);
+.btn.unlike {
+	background: linear-gradient(#ff5555, red);
     color: #fff;
+    border: 1px solid #000;
+}
+
+.btn.like {
+	background: linear-gradient(#00bf00, green);
+    color: #fff;
+    border: 1px solid #000;
 }
 
 .btn.edit {
 	background: linear-gradient(#ff8c55, #ff5e00);
     color: #fff;
+    border: 1px solid #000;
 }
 
 .btn.delete {
 	background: linear-gradient(#fff, #fff);
     color: #000;
+    border: 1px solid #000;
 }

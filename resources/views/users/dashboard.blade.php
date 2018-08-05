@@ -36,7 +36,7 @@
 					Posted by {{ $post->user->first_name }} on {{ date("F jS, Y", strtotime($post->created_at)) }}
 				</div>
 				<div class="interaction">
-					<a href="#" class="btn like">Like</a>
+					<a href="#" class="btn {{ Auth::user()->likes()->where('post_id', $post->id)->first() ? 'like':'unlike' }}" id="like-btn">Like</a>
 					@if(Auth::user()->id == $post->user_id)
 					<a href="#" class="btn edit">Edit</a>
 					<a href="{{ route('posts.delete', $post->id) }}" class="btn delete">Delete</a>
@@ -65,15 +65,13 @@
 						<button type="button" class="btn btn-primary" id="modal-save">Save changes</button>
 					</div>
 				</div>
-				<!-- /.modal-content -->
 			</div>
-			<!-- /.modal-dialog -->
 		</div>
-		<!-- /.modal -->
 
 		<script type="text/javascript">
 			var token = '{{ Session::token() }}';
-			var url = '{{ route('posts.update') }}';
+			var urlEdit = '{{ route('posts.update') }}';
+			var urlLike = '{{ route('posts.like') }}';
 		</script>
 	</div>
 @endsection
