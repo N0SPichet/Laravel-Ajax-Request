@@ -47,6 +47,14 @@ $().ready(function() {
 		}
 	});
 
+	// dashboard show content
+	var postBody = null;
+	$("[id^=body-content-]").on('click', function(event) {
+		var postBody = event.target.textContent;
+		$('#show-body').val(postBody);
+		$('#show-modal').modal();
+	});
+
 	// dashboard edit content
 	var postid = 0;
 	var postBodyElement = null;
@@ -85,9 +93,7 @@ $().ready(function() {
 				_token: token
 			}
 		}).done(function(msg) {
-			console.log(msg['msg']);
 			var btn_pos = event.target;
-			console.log(event.target);
 			if ($(btn_pos).hasClass( "unlike" )) {
 				$(btn_pos).removeClass('unlike').addClass('like');
 			} else {

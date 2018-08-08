@@ -31,7 +31,7 @@
 			</header>
 			@foreach ($posts as $post)
 			<article class="post" data-postid="{{ $post->id }}">
-				<p>{{ $post->body }}</p>
+				<p id="body-content-{{ $post->id }}">{{ $post->body }}</p>
 				<div class="info">
 					Posted by {{ $post->user->first_name }} on {{ date("F jS, Y", strtotime($post->created_at)) }}
 				</div>
@@ -43,9 +43,28 @@
 					@endif
 				</div>
 			</article>
-			<hr>
 			@endforeach
 		</div>
+		{{-- show --}}
+		<div class="modal fade" tabindex="-1" role="dialog" id="show-modal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Show Post</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<textarea class="form-control" name="body" id="show-body" rows="5" disabled></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{-- edit --}}
 		<div class="modal fade" tabindex="-1" role="dialog" id="edit-modal">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
